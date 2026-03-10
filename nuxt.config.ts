@@ -13,6 +13,13 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    microCmsApiKey: '',
+    public: {
+      microCmsServiceDomain: '',
+    },
+  },
+
   devServer: {
     host: '0.0.0.0',
     port: 3000,

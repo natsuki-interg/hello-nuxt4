@@ -4,6 +4,7 @@
     <p class="lead">Nuxt 4 プロジェクトへようこそ</p>
     <AppCounter />
     <nav>
+      <NuxtLink to="/blogs">ブログを見る →</NuxtLink>
       <NuxtLink to="/about">About ページへ →</NuxtLink>
     </nav>
   </div>
@@ -27,6 +28,9 @@ h1 {
 }
 
 nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 

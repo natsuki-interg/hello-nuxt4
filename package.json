@@ -15,6 +15,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "microcms-js-sdk": "^3.3.0",
     "nuxt": "^4.0.0",
     "vue": "^3.5.0",
     "vue-router": "^4.5.0"
