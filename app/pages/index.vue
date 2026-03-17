@@ -3,6 +3,7 @@
     <h1>Hello Nuxt 4! 🚀</h1>
     <p class="lead">Nuxt 4 プロジェクトへようこそ</p>
     <AppCounter />
+    <AppTop3CompareTable />
     <nav>
       <NuxtLink to="/blogs">ブログを見る →</NuxtLink>
       <NuxtLink to="/about">About ページへ →</NuxtLink>
