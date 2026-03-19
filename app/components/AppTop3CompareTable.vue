@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
+
 </script>
 
 <template>
@@ -28,10 +29,12 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
                 :medal-icon-url="data.firstIcon.url"
               />
             </td>
-            <!-- <td>星5</td>
-            <td>5000円</td>
-            <td>とてもかわいい</td>
-            <td>CTAボタン</td> -->
+            <td>{{ data.firstGoods.review }}</td>
+            <td>{{ data.firstGoods.price }}</td>
+            <td>{{ data.firstGoods.point }}</td>
+            <td>
+              <AppTop3CompareTableCTA :goods="data.firstGoods" />
+            </td>
           </tr>
           <tr>
             <td>
@@ -40,10 +43,10 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
                 :medal-icon-url="data.secondIcon.url"
               />
             </td>
-            <!-- <td>星5</td>
-            <td>5000円</td>
-            <td>とてもかわいい</td>
-            <td>CTAボタン</td> -->
+            <td>{{ data.secondGoods.review }}</td>
+            <td>{{ data.secondGoods.price }}</td>
+            <td>{{ data.secondGoods.point }}</td>
+            <td><AppTop3CompareTableCTA :goods="data.secondGoods" /></td>
           </tr>
           <tr>
             <td>
@@ -52,10 +55,10 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
                 :medal-icon-url="data.thirdIcon.url"
               />
             </td>
-            <td>星5</td>
-            <td>5000円</td>
-            <td>とてもかわいい</td>
-            <td>CTAボタン</td>
+            <td>{{ data.thirdGoods.review }}</td>
+            <td>{{ data.thirdGoods.price }}</td>
+            <td>{{ data.thirdGoods.point }}</td>
+            <td><AppTop3CompareTableCTA :goods="data.thirdGoods" /></td>
           </tr>
         </tbody>
       </table>

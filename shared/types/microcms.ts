@@ -16,6 +16,7 @@ export interface Goods extends MicroCMSListContent {
   price: string
   point: string
   image: MicroCMSImage
+  ctaUrl: string
 }
 
 export interface RankingTop3 extends MicroCMSObjectContent {

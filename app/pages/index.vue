@@ -1,20 +1,15 @@
 <template>
   <div class="page-home">
-    <h1>Hello Nuxt 4! 🚀</h1>
-    <p class="lead">Nuxt 4 プロジェクトへようこそ</p>
-    <AppCounter />
+    <div class="mv-image"></div>
     <AppTop3CompareTable />
-    <nav>
-      <NuxtLink to="/blogs">ブログを見る →</NuxtLink>
-      <NuxtLink to="/about">About ページへ →</NuxtLink>
-    </nav>
   </div>
 </template>
 
 <style scoped>
-.page-home {
-  text-align: center;
-  padding: 2rem 0;
+.mv-image {
+  height: 100px;
+  width: 100%;
+  background-color: #00dc82;
 }
 
 h1 {
