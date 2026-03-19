@@ -1,16 +1,15 @@
 <template>
   <header class="header">
     <div class="header-inner">
-      <NuxtLink to="/" class="logo">Hello Nuxt 4</NuxtLink>
+      <NuxtLink to="/" class="logo">スンスン</NuxtLink>
       <button class="menu-toggle" aria-label="メニュー" @click="isOpen = !isOpen">
         <span class="bar" :class="{ open: isOpen }" />
         <span class="bar" :class="{ open: isOpen }" />
         <span class="bar" :class="{ open: isOpen }" />
       </button>
       <nav class="nav" :class="{ open: isOpen }">
-        <NuxtLink to="/" @click="isOpen = false">Home</NuxtLink>
-        <NuxtLink to="/blogs" @click="isOpen = false">Blog</NuxtLink>
-        <NuxtLink to="/about" @click="isOpen = false">About</NuxtLink>
+        <NuxtLink to="/" @click="isOpen = false">ランキングTOP3</NuxtLink>
+        <NuxtLink to="/blogs" @click="isOpen = false">商品詳細一覧</NuxtLink>
       </nav>
     </div>
   </header>
