@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
-
 </script>
 
 <template>
@@ -33,7 +32,10 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
             <td>{{ data.firstGoods.price }}</td>
             <td>{{ data.firstGoods.point }}</td>
             <td>
-              <AppTop3CompareTableCTA :goods="data.firstGoods" />
+              <AppTop3CompareTableCTA
+                :goods="data.firstGoods"
+                :product-u-r-l="data.firstGoods.productURL"
+              />
             </td>
           </tr>
           <tr>
@@ -46,7 +48,12 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
             <td>{{ data.secondGoods.review }}</td>
             <td>{{ data.secondGoods.price }}</td>
             <td>{{ data.secondGoods.point }}</td>
-            <td><AppTop3CompareTableCTA :goods="data.secondGoods" /></td>
+            <td>
+              <AppTop3CompareTableCTA
+                :goods="data.secondGoods"
+                :product-u-r-l="data.secondGoods.productURL"
+              />
+            </td>
           </tr>
           <tr>
             <td>
@@ -58,7 +65,12 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
             <td>{{ data.thirdGoods.review }}</td>
             <td>{{ data.thirdGoods.price }}</td>
             <td>{{ data.thirdGoods.point }}</td>
-            <td><AppTop3CompareTableCTA :goods="data.thirdGoods" /></td>
+            <td>
+              <AppTop3CompareTableCTA
+                :goods="data.thirdGoods"
+                :product-u-r-l="data.thirdGoods.productURL"
+              />
+            </td>
           </tr>
         </tbody>
       </table>
