@@ -27,3 +27,10 @@ export interface RankingTop3 extends MicroCMSObjectContent {
   thirdIcon: MicroCMSImage
   thirdGoods: Goods
 }
+
+export interface StoreGoods extends MicroCMSListContent {
+  store: string
+  place: string
+  storetURL: string
+  image: MicroCMSImage
+}

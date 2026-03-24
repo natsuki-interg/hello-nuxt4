@@ -1,20 +1,19 @@
 <template>
   <div class="page-blogs">
-    <h1>ブログ一覧</h1>
+    <h1>商品一覧</h1>
     <div v-if="status === 'pending'" class="loading">読み込み中...</div>
     <div v-else-if="error" class="error">
       <p>データの取得に失敗しました</p>
       <pre>{{ error.message }}</pre>
     </div>
     <template v-else-if="data">
-      <ul class="blog-list">
-        <li v-for="blog in data.contents" :key="blog.id" class="blog-item">
-          <NuxtLink :to="`/blogs/${blog.id}`">
-            <h2>{{ blog.title }}</h2>
-            <time>{{ formatDate(blog.publishedAt || blog.createdAt) }}</time>
-          </NuxtLink>
-        </li>
-      </ul>
+      <div class="blog-list">
+        <tr v-for="product in data.contents" :key="product.id" class="product-item">
+          <td>
+            <DetailProducts :product-name="product.productName" :img-u-r-l="product.image.url" />
+          </td>
+        </tr>
+      </div>
       <p v-if="data.contents.length === 0" class="empty">記事がありません</p>
     </template>
   </div>
@@ -22,17 +21,9 @@
 
 <script setup lang="ts">
 import type { MicroCMSListResponse } from 'microcms-js-sdk'
-import type { Blog } from '~~/shared/types/microcms'
+import type { Goods } from '~~/shared/types/microcms'
 
-const { data, error, status } = await useFetch<MicroCMSListResponse<Blog>>('/api/blogs')
-
-const formatDate = (dateStr: string) => {
-  return new Date(dateStr).toLocaleDateString('ja-JP', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
-}
+const { data, error, status } = await useFetch<MicroCMSListResponse<Goods>>('/api/goods')
 </script>
 
 <style scoped>
