@@ -9,12 +9,12 @@
 .mv-image {
   height: 100px;
   width: 100%;
-  background-color: #00dc82;
+  background-color: #039ed9;
 }
 
 h1 {
   font-size: 2.5rem;
-  color: #00dc82;
+  color: #039ed9;
 }
 
 .lead {
@@ -31,7 +31,7 @@ nav {
 }
 
 nav a {
-  color: #00dc82;
+  color: #039ed9;
   font-weight: bold;
 }
 

@@ -1,19 +1,19 @@
 <template>
   <div class="page-blogs">
-    <h1>商品一覧</h1>
+    <h1>店舗一覧</h1>
     <div v-if="status === 'pending'" class="loading">読み込み中...</div>
     <div v-else-if="error" class="error">
       <p>データの取得に失敗しました</p>
       <pre>{{ error.message }}</pre>
     </div>
     <template v-else-if="data">
-      <div class="goods-list">
-        <tr v-for="product in data.contents" :key="product.id" class="product-item">
+      <div class="store-goods-list">
+        <tr v-for="store in data.contents" :key="store.id" class="store-goods-item">
           <td>
-            <DetailProducts
-              :product-name="product.productName"
-              :img-u-r-l="product.image.url"
-              :product-u-r-l="product.productURL"
+            <DetailStoreGoods
+              :store-name="store.storeName"
+              :img-u-r-l="store.image.url"
+              :store-u-r-l="store.storeURL"
             />
           </td>
         </tr>
@@ -25,9 +25,9 @@
 
 <script setup lang="ts">
 import type { MicroCMSListResponse } from 'microcms-js-sdk'
-import type { Goods } from '~~/shared/types/microcms'
+import type { StoreGoods } from '~~/shared/types/microcms'
 
-const { data, error, status } = await useFetch<MicroCMSListResponse<Goods>>('/api/goods')
+const { data, error, status } = await useFetch<MicroCMSListResponse<StoreGoods>>('/api/storegoods')
 </script>
 
 <style scoped>
@@ -36,12 +36,11 @@ const { data, error, status } = await useFetch<MicroCMSListResponse<Goods>>('/ap
 }
 
 h1 {
-  display: grid;
   color: #039ed9;
   margin-bottom: 1.5rem;
 }
 
-.goods-list {
+.store-goods-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;

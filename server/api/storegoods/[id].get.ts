@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
   const { client } = useMicroCMS()
 
   return await client.get<StoreGoods>({
-    endpoint: 'goods',
+    endpoint: 'sotoregoods',
     contentId: id,
   })
 })
