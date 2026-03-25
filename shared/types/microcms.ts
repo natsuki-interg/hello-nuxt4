@@ -29,8 +29,8 @@ export interface RankingTop3 extends MicroCMSObjectContent {
 }
 
 export interface StoreGoods extends MicroCMSListContent {
-  store: string
+  storeName: string
   place: string
-  storetURL: string
+  storeURL: string
   image: MicroCMSImage
 }

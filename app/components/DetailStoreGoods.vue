@@ -1,8 +1,8 @@
 <script setup lang="ts">
 interface Props {
-  productName: string
+  storeName: string
   imgURL: string
-  productURL: string
+  storeURL: string
 }
 defineProps<Props>()
 </script>
@@ -10,7 +10,7 @@ defineProps<Props>()
 <template>
   <div class="detailproduct-item">
     <img :src="imgURL" :alt="`票品`" class="product-icon" />
-    <a target="_blank" :href="productURL">{{ productName }}</a>
+    <a target="_blank" :href="storeURL">{{ storeName }}</a>
   </div>
 </template>
 

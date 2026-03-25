@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header-inner">
-      <NuxtLink to="/" class="logo">スンスン</NuxtLink>
+      <NuxtLink to="/" class="logo">PUPPET SUNSUN</NuxtLink>
       <button class="menu-toggle" aria-label="メニュー" @click="isOpen = !isOpen">
         <span class="bar" :class="{ open: isOpen }" />
         <span class="bar" :class="{ open: isOpen }" />
@@ -10,6 +10,7 @@
       <nav class="nav" :class="{ open: isOpen }">
         <NuxtLink to="/" @click="isOpen = false">ランキングTOP3</NuxtLink>
         <NuxtLink to="/blogs" @click="isOpen = false">商品詳細一覧</NuxtLink>
+        <NuxtLink to="/blogs" @click="isOpen = false">店舗一覧</NuxtLink>
       </nav>
     </div>
   </header>
@@ -41,7 +42,7 @@ const isOpen = ref(false)
 .logo {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #00dc82;
+  color: #039ed9;
   text-decoration: none;
 }
 
@@ -59,7 +60,7 @@ const isOpen = ref(false)
 
 .nav a:hover,
 .nav a.router-link-active {
-  color: #00dc82;
+  color: #039ed9;
 }
 
 .menu-toggle {
