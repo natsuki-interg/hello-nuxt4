@@ -1,5 +1,6 @@
 <template>
   <div class="page-blogs">
+    <AppSearchGoods />
     <h1>商品一覧</h1>
     <div v-if="status === 'pending'" class="loading">読み込み中...</div>
     <div v-else-if="error" class="error">
