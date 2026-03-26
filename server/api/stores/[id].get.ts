@@ -1,4 +1,4 @@
-import type { StoreGoods } from '~~/shared/types/microcms'
+import type { Store } from '~~/shared/types/microcms'
 
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
@@ -8,8 +8,8 @@ export default defineEventHandler(async (event) => {
 
   const { client } = useMicroCMS()
 
-  return await client.get<StoreGoods>({
-    endpoint: 'sotoregoods',
+  return await client.get<Store>({
+    endpoint: 'stores',
     contentId: id,
   })
 })

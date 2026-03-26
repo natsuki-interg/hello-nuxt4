@@ -9,8 +9,8 @@
       </button>
       <nav class="nav" :class="{ open: isOpen }">
         <NuxtLink to="/" @click="isOpen = false">ランキングTOP3</NuxtLink>
-        <NuxtLink to="/blogs" @click="isOpen = false">商品詳細一覧</NuxtLink>
-        <NuxtLink to="/blogs" @click="isOpen = false">店舗一覧</NuxtLink>
+        <NuxtLink to="/goods" @click="isOpen = false">商品詳細一覧</NuxtLink>
+        <NuxtLink to="/stores" @click="isOpen = false">店舗一覧</NuxtLink>
       </nav>
     </div>
   </header>

@@ -10,7 +10,7 @@
       <div class="store-goods-list">
         <tr v-for="store in data.contents" :key="store.id" class="store-goods-item">
           <td>
-            <DetailStoreGoods
+            <DetailStore
               :store-name="store.storeName"
               :img-u-r-l="store.image.url"
               :store-u-r-l="store.storeURL"
@@ -25,9 +25,10 @@
 
 <script setup lang="ts">
 import type { MicroCMSListResponse } from 'microcms-js-sdk'
-import type { StoreGoods } from '~~/shared/types/microcms'
+import type { Store } from '~~/shared/types/microcms'
 
-const { data, error, status } = await useFetch<MicroCMSListResponse<StoreGoods>>('/api/storegoods')
+const { data, error, status } = await useFetch<MicroCMSListResponse<Store>>('/api/stores')
+console.log(data)
 </script>
 
 <style scoped>
