@@ -1,6 +1,6 @@
 <template>
   <div class="page-blogs">
-    <AppSearchGoods />
+    <AppSearchGoods @search-button="onSearch" />
     <h1>商品一覧</h1>
     <div v-if="status === 'pending'" class="loading">読み込み中...</div>
     <div v-else-if="error" class="error">
@@ -9,7 +9,7 @@
     </div>
     <template v-else-if="data">
       <div class="goods-list">
-        <tr v-for="product in data.contents" :key="product.id" class="product-item">
+        <tr v-for="product in filterSearch" :key="product.id" class="product-item">
           <td>
             <DetailProducts
               :product-name="product.productName"
@@ -19,16 +19,32 @@
           </td>
         </tr>
       </div>
-      <p v-if="data.contents.length === 0" class="empty">記事がありません</p>
     </template>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { MicroCMSListResponse } from 'microcms-js-sdk'
+import DetailProducts from '~/components/DetailProducts.vue'
 import type { Goods } from '~~/shared/types/microcms'
 
 const { data, error, status } = await useFetch<MicroCMSListResponse<Goods>>('/api/goods')
+
+const searchTags = ref<string[]>([])
+
+const onSearch = (selectedItems: string[]): void => {
+  searchTags.value = selectedItems
+}
+
+const filterSearch = computed(() => {
+  if (!data.value) {
+    return []
+  } else if (searchTags.value.length === 0) {
+    return data.value.contents
+  } else {
+    return ''
+  }
+})
 </script>
 
 <style scoped>

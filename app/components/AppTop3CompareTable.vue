@@ -3,14 +3,14 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
 </script>
 
 <template>
-  <div class="page-blogs">
+  <div class="page-goods">
     <div v-if="status === 'pending'" class="loading">読み込み中...</div>
     <div v-else-if="error" class="error">
       <p>データの取得に失敗しました</p>
       <pre>{{ error.message }}</pre>
     </div>
     <template v-else-if="data?.firstGoods">
-      <table>
+      <table class="table-goods">
         <thead>
           <tr class="comparetable-th">
             <th class="label1-th1">商品名</th>
@@ -31,7 +31,7 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
             <td>{{ data.firstGoods.review }}</td>
             <td>{{ data.firstGoods.price }}</td>
             <td>{{ data.firstGoods.point }}</td>
-            <td>
+            <td class="table-cta">
               <AppTop3CompareTableCTA
                 :goods="data.firstGoods"
                 :product-u-r-l="data.firstGoods.productURL"
@@ -48,7 +48,7 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
             <td>{{ data.secondGoods.review }}</td>
             <td>{{ data.secondGoods.price }}</td>
             <td>{{ data.secondGoods.point }}</td>
-            <td>
+            <td class="table-cta">
               <AppTop3CompareTableCTA
                 :goods="data.secondGoods"
                 :product-u-r-l="data.secondGoods.productURL"
@@ -65,7 +65,7 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
             <td>{{ data.thirdGoods.review }}</td>
             <td>{{ data.thirdGoods.price }}</td>
             <td>{{ data.thirdGoods.point }}</td>
-            <td>
+            <td class="table-cta">
               <AppTop3CompareTableCTA
                 :goods="data.thirdGoods"
                 :product-u-r-l="data.thirdGoods.productURL"
@@ -79,27 +79,38 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
 </template>
 
 <style scoped>
-.table {
+.table-goods {
   table-layout: fixed;
   width: 100%;
   height: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
+  background-color: #fff;
 }
 
 th,
 td {
-  border: 1px solid #333;
+  border: 1px solid #ddd;
   text-align: center;
 }
 
 th {
   font-size: 14px;
-  padding: 8px;
+  padding: 16px;
+  background-color: #edecec;
 }
 
 td {
-  font-size: 12px;
-  padding: 12px;
+  font-size: 14px;
+  padding: 10px;
+  position: relative;
+}
+
+.table-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-top: none;
+  border-left: none;
 }
 </style>

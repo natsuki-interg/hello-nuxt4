@@ -1,51 +1,39 @@
 <template>
   <div class="page-home">
-    <div class="mv-image"></div>
-    <AppTop3CompareTable />
+    <div class="mv-image">
+      <img class="mv-picture" src="/img/RE_TOP2.webp" alt="MV画像" />
+    </div>
+    <h2>PUPPET SUNSUN GOODS TOP3</h2>
+    <div class="table-container">
+      <AppTop3CompareTable />
+    </div>
   </div>
 </template>
 
 <style scoped>
 .mv-image {
-  height: 100px;
+  height: auto;
   width: 100%;
-  background-color: #039ed9;
+  line-height: 0;
 }
-
-h1 {
+å h1 {
   font-size: 2.5rem;
   color: #039ed9;
 }
 
-.lead {
-  font-size: 1.2rem;
-  color: #666;
-  margin-top: 0.5rem;
-}
-
-nav {
+h2 {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  align-items: center;
+  padding: 40px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #333;
 }
 
-nav a {
-  color: #039ed9;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-@media (width <= 768px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  .lead {
-    font-size: 1rem;
-  }
+.table-container {
+  padding: 16px;
+  background-color: #97cddf;
+  margin-bottom: 104px;
 }
 </style>
