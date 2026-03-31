@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 interface Emits {
-  (event: 'SearchButton', choice: string[]): void
+  (event: 'search-button', choice: string[]): void
 }
 
 const emit = defineEmits<Emits>()
@@ -26,7 +26,7 @@ const items = [
 const selectedItems = ref<string[]>([])
 
 const onSearch = (): void => {
-  emit('SearchButton', selectedItems.value)
+  emit('search-button', selectedItems.value)
 }
 </script>
 
