@@ -57,11 +57,8 @@ p::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-}
-
-.chara-image img {
-  max-width: 70%;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .table-container {

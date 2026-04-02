@@ -39,7 +39,7 @@ const onSearch = (): void => {
   width: 100%;
   margin: 2rem 0;
   padding-bottom: 24px;
-  background-color: #f5f4f4;
+  background-color: #f6f6f6;
   border-radius: 8px;
 }
 
@@ -62,7 +62,7 @@ label {
   font-size: 20px;
   font-weight: bold;
   color: #646464;
-  background-color: #edecec;
+  background-color: #e4e4e4;
   border-radius: 8px 8px 0 0;
   letter-spacing: 2px;
 }
