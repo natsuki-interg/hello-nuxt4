@@ -42,7 +42,9 @@ const filterSearch = computed(() => {
   } else if (searchTags.value.length === 0) {
     return data.value.contents
   } else {
-    return ''
+    return data.value.contents.filter((product) =>
+      searchTags.value.some((tag) => tag === product.tag[0]),
+    )
   }
 })
 </script>
