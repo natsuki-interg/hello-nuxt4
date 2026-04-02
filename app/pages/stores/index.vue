@@ -38,7 +38,9 @@ console.log(data)
 
 h1 {
   color: #039ed9;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
+  font-size: 32px;
+  letter-spacing: 2px;
 }
 
 .store-goods-list {

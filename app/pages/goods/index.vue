@@ -1,6 +1,8 @@
 <template>
-  <div class="page-blogs">
-    <AppSearchGoods @search-button="onSearch" />
+  <div class="page-goods">
+    <div class="search-box">
+      <AppSearchGoods @search-button="onSearch" />
+    </div>
     <h1>商品一覧</h1>
     <div v-if="status === 'pending'" class="loading">読み込み中...</div>
     <div v-else-if="error" class="error">
@@ -50,21 +52,30 @@ const filterSearch = computed(() => {
 </script>
 
 <style scoped>
-.page-blogs {
-  padding: 2rem 0;
+.page-goods {
+  padding-bottom: 64px;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 32spx;
 }
 
 h1 {
   display: grid;
-  color: #039ed9;
-  margin-bottom: 1.5rem;
+  color: #379cc3;
+  margin-bottom: 24px;
+  font-size: 32px;
+  letter-spacing: 2px;
 }
 
 .goods-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  gap: 24px;
+  gap: 56px;
 }
 
 .blog-item {

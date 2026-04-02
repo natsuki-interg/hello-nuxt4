@@ -1,6 +1,6 @@
 <template>
   <div class="counter">
-    <p>検索欄</p>
+    <p>商品絞り込み</p>
     <section>
       <label v-for="item in items" :key="item.id">
         <input id="item.id" v-model="selectedItems" type="checkbox" :value="item.choice" />
@@ -32,31 +32,82 @@ const onSearch = (): void => {
 
 <style scoped>
 .counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin: 2rem 0;
-  padding: 1.5rem;
-  border: 1px solid #e0e0e0;
+  padding-bottom: 24px;
+  background-color: #f5f4f4;
   border-radius: 8px;
 }
 
+section {
+  padding: 24px;
+}
+
+label {
+  padding: 24px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
 .counter p {
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  width: 100%;
+  font-size: 20px;
   font-weight: bold;
-  color: #333;
+  color: #646464;
+  background-color: #edecec;
+  border-radius: 8px 8px 0 0;
+  letter-spacing: 2px;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #bbbaba;
+  border-radius: 4px;
+  background-color: #fff;
+  vertical-align: text-bottom;
+  position: relative;
+}
+
+input[type='checkbox']:checked {
+  background-color: #48b7d0;
+  border-color: #48b7d0;
+}
+
+input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 button {
-  margin: 0 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 8px;
+  width: 40%;
   border: none;
   border-radius: 4px;
-  background-color: #00dc82;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: #00b368;
+  background-color: #8bd3e4;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px #48b7d0;
+  transition: all 0.1s ease-out;
+  letter-spacing: 4px;
 }
 </style>
