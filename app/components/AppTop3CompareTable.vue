@@ -32,10 +32,12 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
             <td>{{ data.firstGoods.price }}</td>
             <td>{{ data.firstGoods.point }}</td>
             <td class="table-cta">
-              <AppTop3CompareTableCTA
-                :goods="data.firstGoods"
-                :product-u-r-l="data.firstGoods.productURL"
-              />
+              <div class="table-cta-container">
+                <AppTop3CompareTableCTA
+                  :goods="data.firstGoods"
+                  :product-u-r-l="data.firstGoods.productURL"
+                />
+              </div>
             </td>
           </tr>
           <tr>
@@ -49,10 +51,12 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
             <td>{{ data.secondGoods.price }}</td>
             <td>{{ data.secondGoods.point }}</td>
             <td class="table-cta">
-              <AppTop3CompareTableCTA
-                :goods="data.secondGoods"
-                :product-u-r-l="data.secondGoods.productURL"
-              />
+              <div class="table-cta-container">
+                <AppTop3CompareTableCTA
+                  :goods="data.secondGoods"
+                  :product-u-r-l="data.secondGoods.productURL"
+                />
+              </div>
             </td>
           </tr>
           <tr>
@@ -66,10 +70,12 @@ const { data, error, status } = await useFetch<RankingTop3>('/api/rankingtop3')
             <td>{{ data.thirdGoods.price }}</td>
             <td>{{ data.thirdGoods.point }}</td>
             <td class="table-cta">
-              <AppTop3CompareTableCTA
-                :goods="data.thirdGoods"
-                :product-u-r-l="data.thirdGoods.productURL"
-              />
+              <div class="table-cta-container">
+                <AppTop3CompareTableCTA
+                  :goods="data.thirdGoods"
+                  :product-u-r-l="data.thirdGoods.productURL"
+                />
+              </div>
             </td>
           </tr>
         </tbody>
@@ -106,11 +112,13 @@ td {
 }
 
 .table-cta {
+  vertical-align: middle;
+  height: 100%;
+}
+
+.table-cta-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  border-top: none;
-  border-left: none;
 }
 </style>

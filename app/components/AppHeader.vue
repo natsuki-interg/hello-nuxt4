@@ -42,8 +42,9 @@ const isOpen = ref(false)
 .logo {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #039ed9;
+  color: #379cc3;
   text-decoration: none;
+  letter-spacing: 2px;
 }
 
 .nav {
@@ -56,11 +57,12 @@ const isOpen = ref(false)
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
+  letter-spacing: 1px;
 }
 
 .nav a:hover,
 .nav a.router-link-active {
-  color: #039ed9;
+  color: #379cc3;
 }
 
 .menu-toggle {

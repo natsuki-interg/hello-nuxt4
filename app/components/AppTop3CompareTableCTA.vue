@@ -25,5 +25,11 @@ defineProps<Props>()
   font-weight: bold;
   border-radius: 8px;
   box-shadow: 0 6px #da1e3d;
+  transition: all 0.1s ease-out;
+}
+
+.compare-table-cta-button:active {
+  box-shadow: none;
+  transform: translateY(6px);
 }
 </style>

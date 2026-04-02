@@ -21,4 +21,10 @@ defineProps<Props>()
   align-items: center;
   width: 100%;
 }
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
